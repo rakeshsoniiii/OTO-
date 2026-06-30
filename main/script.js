@@ -609,14 +609,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // 12. LIGHTBOX
   // ============================================================
   const lightbox = document.getElementById('lightbox');
-  const lightboxIcon = document.getElementById('lightboxIcon');
+  const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
 
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
-      const icon = item.querySelector('i');
-      if (icon) {
-        lightboxIcon.className = icon.className;
+      const img = item.querySelector('img');
+      if (img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
       }
       lightbox.classList.add('open');
     });
