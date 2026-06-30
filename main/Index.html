@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTO Mobiles — On Time On Way | Mobile Repair Lab, Bhilai</title>
+<meta name="description" content="OTO Mobiles — Bhilai's premium mobile repair laboratory. Screen, battery, motherboard repair, second-hand phones, exchange & data recovery. On Time. On Way.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="OTO Mobiles — On Time On Way">
+<meta property="og:description" content="Bhilai's premium mobile repair laboratory. Fast, trusted, transparent.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OTO Mobiles — On Time On Way">
+<meta name="twitter:description" content="Bhilai's premium mobile repair laboratory.">
+
+<!-- Schema.org Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ElectronicsStore",
+  "name": "OTO Mobiles",
+  "alternateName": "On Time On Way",
+  "image": "",
+  "telephone": ["+91-9244077867", "+91-7746016492"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Himalaya Complex Shop No.3, Akash Ganga",
+    "addressLocality": "Bhilai",
+    "addressRegion": "Chhattisgarh",
+    "addressCountry": "IN"
+  },
+  "founder": ["Amit Giri", "Shubham Giri"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PAGE LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-mark">OTO</div>
+    <div class="loader-bar"><span id="loaderProgress"></span></div>
+    <div class="loader-status" id="loaderStatus">INITIALIZING SYSTEM // 00%</div>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor" id="cursor"><div class="cursor-dot"></div></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-logo">OTO<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#services" data-cursor="hover">Services</a>
+    <a href="#shop" data-cursor="hover">Shop</a>
+    <a href="#about" data-cursor="hover">About</a>
+    <a href="#process" data-cursor="hover">Process</a>
+    <a href="#contact" data-cursor="hover">Contact</a>
+  </nav>
+  <a href="https://wa.me/919244077867" target="_blank" class="nav-cta" data-cursor="hover">
+    <i class="fa-brands fa-whatsapp"></i> Talk to Us
+  </a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">01 / Services</a>
+  <a href="#shop">02 / Shop</a>
+  <a href="#about">03 / About</a>
+  <a href="#process">04 / Process</a>
+  <a href="#contact">05 / Contact</a>
+  <div class="mobile-menu-foot">
+    <a href="tel:9244077867">9244077867</a>
+    <a href="tel:7746016492">7746016492</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-noise"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hud hud-tl"><span>SYS.STATUS</span><strong>ONLINE</strong></div>
+  <div class="hud hud-tr"><span>LOCATION</span><strong>BHILAI, CG</strong></div>
+  <div class="hud hud-bl"><span>UNIT</span><strong>OTO–001</strong></div>
+
+  <div class="hero-content">
+    <p class="eyebrow" data-reveal>On Time. On Way.</p>
+    <h1 class="hero-title">
+      <span class="line" data-reveal-line><span>FAST</span></span>
+      <span class="line" data-reveal-line><span>TRUSTED</span></span>
+      <span class="line accent" data-reveal-line><span>MOBILE REPAIR</span></span>
+    </h1>
+    <p class="hero-sub" data-reveal>Repair <i class="fa-solid fa-slash"></i> Buy <i class="fa-solid fa-slash"></i> Sell <i class="fa-solid fa-slash"></i> Exchange</p>
+
+    <div class="hero-actions" data-reveal>
+      <a href="#services" class="btn btn-primary magnetic" data-cursor="hover">
+        <span>Repair Now</span>
+      </a>
+      <a href="https://wa.me/919244077867" target="_blank" class="btn btn-ghost magnetic" data-cursor="hover">
+        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+      </a>
+      <a href="tel:9244077867" class="btn btn-outline-icon magnetic" data-cursor="hover" aria-label="Call now">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>SCROLL TO INITIATE DIAGNOSTIC</span>
+    <div class="scroll-cue-line"><i></i></div>
+  </div>
+</section>
+
+<!-- ============ SCROLL STORY / EXPLODED VIEW ============ -->
+<section class="story" id="story">
+  <div class="story-pin">
+    <div class="story-text">
+      <p class="story-step" data-step="0">
+        <span class="tag">[ 01 / SCAN ]</span>
+        Every repair begins with a full diagnostic — display, battery, board, camera, frame.
+      </p>
+      <p class="story-step" data-step="1">
+        <span class="tag">[ 02 / EXPLODE ]</span>
+        We open the unit virtually before we open it physically. No guesswork. No surprises.
+      </p>
+      <p class="story-step" data-step="2">
+        <span class="tag">[ 03 / ISOLATE ]</span>
+        Hover any component to see its condition. Click to read the full diagnostic note.
+      </p>
+      <p class="story-step" data-step="3">
+        <span class="tag">[ 04 / RESTORE ]</span>
+        Genuine parts. Certified hands. Your phone, exactly as it should be.
+      </p>
+    </div>
+    <div class="story-stage">
+      <canvas id="storyCanvas"></canvas>
+      <div class="story-label" id="storyLabel" style="display:none;">
+        <span class="story-label-name"></span>
+        <span class="story-label-note"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="section-head">
+    <span class="section-eyebrow">[ CAPABILITIES ]</span>
+    <h2>Everything your device<br>could possibly need.</h2>
+  </div>
+
+  <div class="services-grid">
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <h3>Screen Replacement</h3>
+      <p>Original-grade displays, color-matched, calibrated on install.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-battery-three-quarters"></i>
+      <h3>Battery Replacement</h3>
+      <p>Real capacity, real lifespan — no inflated mAh promises.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-plug-circle-bolt"></i>
+      <h3>Charging Port Repair</h3>
+      <p>Micro-soldering precision for ports that hold a charge again.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-camera"></i>
+      <h3>Camera Repair</h3>
+      <p>Lens, sensor, and module fixes that bring focus back.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-droplet-slash"></i>
+      <h3>Water Damage Repair</h3>
+      <p>Corrosion treatment and board-level revival, fast.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-microchip"></i>
+      <h3>Motherboard Repair</h3>
+      <p>Component-level diagnostics under microscope, not guesswork.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-volume-high"></i>
+      <h3>Speaker Repair</h3>
+      <p>Clean, full sound restored — no rattle, no distortion.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-microphone"></i>
+      <h3>Mic Repair</h3>
+      <p>Crisp calls and clean recordings, every time.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>Software Solutions</h3>
+      <p>Flashing, unlocks, OS issues — sorted by certified technicians.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-database"></i>
+      <h3>Data Recovery</h3>
+      <p>Photos, contacts, files — recovered with care, kept private.</p>
+    </article>
+    <article class="service-card" data-tilt>
+      <i class="fa-solid fa-headphones-simple"></i>
+      <h3>Accessories</h3>
+      <p>Cases, chargers, cables — curated, not just stocked.</p>
+    </article>
+    <article class="service-card service-card-cta" data-tilt>
+      <h3>Not sure what's wrong?</h3>
+      <p>Send us a video on WhatsApp — we'll diagnose it for free.</p>
+      <a href="https://wa.me/919244077867" target="_blank" class="link-arrow" data-cursor="hover">Get a free diagnosis <i class="fa-solid fa-arrow-up-right"></i></a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ BUY SECOND-HAND PHONES ============ -->
+<section class="shop" id="shop">
+  <div class="section-head">
+    <span class="section-eyebrow">[ CERTIFIED INVENTORY ]</span>
+    <h2>Second-hand.<br>First-rate.</h2>
+    <p class="section-sub">Every unit graded, tested, and warrantied before it reaches you.</p>
+  </div>
+
+  <div class="phone-grid">
+    <article class="phone-card" data-reveal>
+      <div class="phone-card-top">
+        <span class="phone-condition condition-a">GRADE A</span>
+        <span class="phone-warranty"><i class="fa-solid fa-shield-halved"></i> 6 mo warranty</span>
+      </div>
+      <div class="phone-img"><i class="fa-brands fa-apple"></i></div>
+      <h3>iPhone 13</h3>
+      <ul class="phone-specs">
+        <li><span>Storage</span><strong>128GB</strong></li>
+        <li><span>Battery Health</span><strong>91%</strong></li>
+        <li><span>Condition</span><strong>Excellent</strong></li>
+      </ul>
+      <div class="phone-foot">
+        <span class="phone-price">₹38,999</span>
+        <a href="https://wa.me/919244077867?text=Hi%2C%20I'm%20interested%20in%20the%20iPhone%2013%20listed%20on%20your%20site" target="_blank" class="btn btn-sm" data-cursor="hover">Enquire</a>
+      </div>
+    </article>
+
+    <article class="phone-card" data-reveal>
+      <div class="phone-card-top">
+        <span class="phone-condition condition-a">GRADE A</span>
+        <span class="phone-warranty"><i class="fa-solid fa-shield-halved"></i> 6 mo warranty</span>
+      </div>
+      <div class="phone-img"><i class="fa-solid fa-mobile-screen"></i></div>
+      <h3>Samsung S22</h3>
+      <ul class="phone-specs">
+        <li><span>Storage / RAM</span><strong>128GB / 8GB</strong></li>
+        <li><span>Battery Health</span><strong>88%</strong></li>
+        <li><span>Condition</span><strong>Very Good</strong></li>
+      </ul>
+      <div class="phone-foot">
+        <span class="phone-price">₹27,499</span>
+        <a href="https://wa.me/919244077867?text=Hi%2C%20I'm%20interested%20in%20the%20Samsung%20S22%20listed%20on%20your%20site" target="_blank" class="btn btn-sm" data-cursor="hover">Enquire</a>
+      </div>
+    </article>
+
+    <article class="phone-card" data-reveal>
+      <div class="phone-card-top">
+        <span class="phone-condition condition-b">GRADE B</span>
+        <span class="phone-warranty"><i class="fa-solid fa-shield-halved"></i> 3 mo warranty</span>
+      </div>
+      <div class="phone-img"><i class="fa-solid fa-mobile-screen"></i></div>
+      <h3>OnePlus 11R</h3>
+      <ul class="phone-specs">
+        <li><span>Storage / RAM</span><strong>256GB / 16GB</strong></li>
+        <li><span>Battery Health</span><strong>85%</strong></li>
+        <li><span>Condition</span><strong>Good</strong></li>
+      </ul>
+      <div class="phone-foot">
+        <span class="phone-price">₹21,999</span>
+        <a href="https://wa.me/919244077867?text=Hi%2C%20I'm%20interested%20in%20the%20OnePlus%2011R%20listed%20on%20your%20site" target="_blank" class="btn btn-sm" data-cursor="hover">Enquire</a>
+      </div>
+    </article>
+
+    <article class="phone-card" data-reveal>
+      <div class="phone-card-top">
+        <span class="phone-condition condition-a">GRADE A</span>
+        <span class="phone-warranty"><i class="fa-solid fa-shield-halved"></i> 6 mo warranty</span>
+      </div>
+      <div class="phone-img"><i class="fa-brands fa-google"></i></div>
+      <h3>Pixel 7</h3>
+      <ul class="phone-specs">
+        <li><span>Storage</span><strong>128GB</strong></li>
+        <li><span>Battery Health</span><strong>90%</strong></li>
+        <li><span>Condition</span><strong>Excellent</strong></li>
+      </ul>
+      <div class="phone-foot">
+        <span class="phone-price">₹24,999</span>
+        <a href="https://wa.me/919244077867?text=Hi%2C%20I'm%20interested%20in%20the%20Pixel%207%20listed%20on%20your%20site" target="_blank" class="btn btn-sm" data-cursor="hover">Enquire</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- SELL YOUR PHONE -->
+  <div class="sell-panel">
+    <div class="sell-text">
+      <span class="section-eyebrow">[ INSTANT VALUATION ]</span>
+      <h2>Sell your phone<br>in one visit.</h2>
+      <p>Walk in with your device. We scan, grade, and quote — usually inside ten minutes. No haggling, no hidden cuts.</p>
+      <a href="https://wa.me/919244077867?text=Hi%2C%20I'd%20like%20to%20get%20a%20valuation%20for%20my%20phone" target="_blank" class="btn btn-primary magnetic" data-cursor="hover"><span>Sell Your Phone</span></a>
+    </div>
+    <div class="sell-visual">
+      <div class="scan-device">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <div class="scan-line"></div>
+      </div>
+      <div class="scan-value" id="scanValue">
+        <span>ESTIMATED VALUE</span>
+        <strong>₹ — — — —</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS MARQUEE ============ -->
+<section class="brands">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Apple</span><span>Samsung</span><span>OnePlus</span><span>Google Pixel</span><span>Nothing</span><span>Motorola</span><span>Realme</span><span>Oppo</span><span>Vivo</span><span>Xiaomi</span>
+      <span>Apple</span><span>Samsung</span><span>OnePlus</span><span>Google Pixel</span><span>Nothing</span><span>Motorola</span><span>Realme</span><span>Oppo</span><span>Vivo</span><span>Xiaomi</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="section-head">
+    <span class="section-eyebrow">[ THE LAB ]</span>
+    <h2>Two brothers.<br>One promise.</h2>
+  </div>
+
+  <p class="about-lede">OTO stands for <strong>On Time, On Way</strong> — a promise Amit and Shubham Giri built their reputation on. What started as a single repair counter in Akash Ganga has grown into Bhilai's most trusted name for mobile repair, resale, and exchange — without losing the personal attention that started it all.</p>
+
+  <div class="owners">
+    <div class="owner-card" data-reveal>
+      <div class="owner-avatar"><i class="fa-solid fa-user"></i></div>
+      <h3>Amit Giri</h3>
+      <span>Co-Founder</span>
+    </div>
+    <div class="owner-card" data-reveal>
+      <div class="owner-avatar"><i class="fa-solid fa-user"></i></div>
+      <h3>Shubham Giri</h3>
+      <span>Co-Founder</span>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-track"></div>
+    <div class="timeline-item" data-reveal>
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">Year 1</span>
+      <p>First counter opens in Akash Ganga, Bhilai.</p>
+    </div>
+    <div class="timeline-item" data-reveal>
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">Year 2–3</span>
+      <p>Word-of-mouth growth — second-hand sales and exchange added.</p>
+    </div>
+    <div class="timeline-item" data-reveal>
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">Year 4</span>
+      <p>Full diagnostic lab set up — micro-soldering, data recovery.</p>
+    </div>
+    <div class="timeline-item" data-reveal>
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">Today</span>
+      <p>5,000+ repairs and counting, still hand-checked by the founders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-card" data-reveal>
+      <strong class="stat-num" data-count="5000">0</strong>
+      <span>+ Repairs Completed</span>
+    </div>
+    <div class="stat-card" data-reveal>
+      <strong class="stat-num" data-count="1000">0</strong>
+      <span>+ Used Phones Sold</span>
+    </div>
+    <div class="stat-card" data-reveal>
+      <strong class="stat-num" data-count="5">0</strong>
+      <span>+ Years Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="section-head">
+    <span class="section-eyebrow">[ THE PROCESS ]</span>
+    <h2>From drop-off<br>to delivery.</h2>
+  </div>
+  <div class="process-track">
+    <div class="process-step" data-reveal><span class="step-no">01</span><h3>Bring Phone</h3><p>Walk in, no appointment needed.</p></div>
+    <div class="process-step" data-reveal><span class="step-no">02</span><h3>Diagnosis</h3><p>Full scan, issue identified and explained.</p></div>
+    <div class="process-step" data-reveal><span class="step-no">03</span><h3>Approval</h3><p>You see the quote before we touch a screw.</p></div>
+    <div class="process-step" data-reveal><span class="step-no">04</span><h3>Repair</h3><p>Genuine parts, certified technicians.</p></div>
+    <div class="process-step" data-reveal><span class="step-no">05</span><h3>Quality Testing</h3><p>Multi-point check before it leaves the bench.</p></div>
+    <div class="process-step" data-reveal><span class="step-no">06</span><h3>Delivery</h3><p>Back in your hands, on time.</p></div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="section-head">
+    <span class="section-eyebrow">[ INSIDE THE LAB ]</span>
+    <h2>The work, up close.</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item g1" data-cursor="view"><i class="fa-solid fa-microchip"></i></div>
+    <div class="gallery-item g2" data-cursor="view"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    <div class="gallery-item g3" data-cursor="view"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <div class="gallery-item g4" data-cursor="view"><i class="fa-solid fa-mobile-screen-button"></i></div>
+    <div class="gallery-item g5" data-cursor="view"><i class="fa-solid fa-battery-three-quarters"></i></div>
+    <div class="gallery-item g6" data-cursor="view"><i class="fa-solid fa-camera-retro"></i></div>
+  </div>
+  <div class="lightbox" id="lightbox"><div class="lightbox-inner"><i id="lightboxIcon" class="fa-solid"></i><button id="lightboxClose"><i class="fa-solid fa-xmark"></i></button></div></div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials">
+  <div class="section-head">
+    <span class="section-eyebrow">[ FROM THE BENCH LOG ]</span>
+    <h2>What Bhilai says.</h2>
+  </div>
+  <div class="testimonial-track">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Screen replaced in under an hour, looked brand new. Genuinely on time, on way."</p>
+      <span>— Priya S.</span>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Sold my old phone here — fair price, no back and forth. Easiest sale I've made."</p>
+      <span>— Rohit K.</span>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Water damage repair on a board everyone else gave up on. Amit ji fixed it himself."</p>
+      <span>— Neha T.</span>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Bought a second-hand Pixel, battery health exactly as promised. Trustworthy shop."</p>
+      <span>— Arjun M.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="section-head">
+    <span class="section-eyebrow">[ FAQ ]</span>
+    <h2>Questions, answered.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">How long does a screen replacement take? <i class="fa-solid fa-plus"></i></button>
+      <div class="faq-a"><p>Most screen replacements are done within 45–60 minutes while you wait.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you offer warranty on repairs? <i class="fa-solid fa-plus"></i></button>
+      <div class="faq-a"><p>Yes — every repair includes a service warranty, and second-hand phones come with 3–6 months coverage depending on grade.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I exchange my old phone? <i class="fa-solid fa-plus"></i></button>
+      <div class="faq-a"><p>Absolutely. Bring your device in for an on-the-spot valuation and exchange toward any phone in stock.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is my data safe during repair? <i class="fa-solid fa-plus"></i></button>
+      <div class="faq-a"><p>Your data is never accessed unless you request recovery, and recovered data is handled under strict privacy practice.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do I need an appointment? <i class="fa-solid fa-plus"></i></button>
+      <div class="faq-a"><p>No appointment needed — walk into Himalaya Complex, Shop No.3, Akash Ganga, Bhilai any time we're open.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="section-eyebrow">[ VISIT THE LAB ]</span>
+      <h2>Let's get your<br>phone sorted.</h2>
+
+      <div class="contact-block">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <strong>Address</strong>
+          <p>Himalaya Complex Shop No.3,<br>Akash Ganga, Bhilai, Chhattisgarh</p>
+        </div>
+      </div>
+      <div class="contact-block">
+        <i class="fa-solid fa-user-group"></i>
+        <div>
+          <strong>Owners</strong>
+          <p>Amit Giri &amp; Shubham Giri</p>
+        </div>
+      </div>
+      <div class="contact-block">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <strong>Phone</strong>
+          <p><a href="tel:9244077867">9244077867</a> &nbsp;|&nbsp; <a href="tel:7746016492">7746016492</a></p>
+        </div>
+      </div>
+      <div class="contact-block">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+          <strong>WhatsApp</strong>
+          <p><a href="https://wa.me/919244077867" target="_blank">9244077867</a> &nbsp;|&nbsp; <a href="https://wa.me/917746016492" target="_blank">7746016492</a></p>
+        </div>
+      </div>
+
+      <div class="contact-actions">
+        <a href="https://wa.me/919244077867" target="_blank" class="btn btn-primary magnetic" data-cursor="hover"><span>Chat on WhatsApp</span></a>
+        <a href="tel:9244077867" class="btn btn-ghost magnetic" data-cursor="hover"><i class="fa-solid fa-phone"></i><span>Call Now</span></a>
+      </div>
+    </div>
+
+    <div class="contact-map">
+      <iframe title="OTO Mobiles Location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Himalaya+Complex+Akash+Ganga+Bhilai+Chhattisgarh&output=embed">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-top">
+    <a href="#hero" class="footer-logo">OTO<span>.</span></a>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#services">Services</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Screen Replacement</a>
+        <a href="#services">Battery Replacement</a>
+        <a href="#services">Data Recovery</a>
+        <a href="#services">Software Solutions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:9244077867">9244077867</a>
+        <a href="tel:7746016492">7746016492</a>
+        <a href="https://wa.me/919244077867" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> OTO Mobiles — On Time On Way. All rights reserved.</span>
+    <span>Himalaya Complex, Akash Ganga, Bhilai, CG</span>
+  </div>
+</footer>
+
+<!-- ============ LIBRARIES ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
