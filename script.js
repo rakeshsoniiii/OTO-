@@ -70,25 +70,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================================
-  // 3. SCROLL PROGRESS
+  // 3. SCROLL PROGRESS & NAVIGATION SCROLL
   // ============================================================
   const scrollProgress = document.getElementById('scrollProgress');
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = progress + '%';
-  });
-
-  // ============================================================
-  // 4. NAVIGATION
-  // ============================================================
   const nav = document.getElementById('nav');
   const burger = document.getElementById('navBurger');
   const mobileMenu = document.getElementById('mobileMenu');
 
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = progress + '%';
+    
+    nav.classList.toggle('scrolled', scrollTop > 60);
+  }, { passive: true });
+
+  // ============================================================
+  // 4. DARK / LIGHT THEME TOGGLE
+  // ============================================================
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    const toggleIcon = themeToggle.querySelector('i');
+    if (toggleIcon) {
+      toggleIcon.classList.remove('fa-moon');
+      toggleIcon.classList.add('fa-sun');
+    }
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    const toggleIcon = themeToggle.querySelector('i');
+    if (toggleIcon) {
+      if (isDark) {
+        toggleIcon.classList.remove('fa-moon');
+        toggleIcon.classList.add('fa-sun');
+      } else {
+        toggleIcon.classList.remove('fa-sun');
+        toggleIcon.classList.add('fa-moon');
+      }
+    }
   });
 
   burger.addEventListener('click', () => {
@@ -106,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // 5. HERO — Three.js Particle System
+  // 5. HERO — Three.js Particle System (Orange/Gold theme)
   // ============================================================
   function initHeroParticles() {
     const canvas = document.getElementById('heroCanvas');
@@ -124,13 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       // Particles
-      const count = 1800;
+      const isMobile = window.innerWidth < 768;
+      const count = isMobile ? 600 : 1800;
       const positions = new Float32Array(count * 3);
       const colors = new Float32Array(count * 3);
       const sizes = new Float32Array(count);
 
-      const color1 = new THREE.Color('#3B82F6');
-      const color2 = new THREE.Color('#00E5FF');
+      const color1 = new THREE.Color('#F97316'); // Orange
+      const color2 = new THREE.Color('#FBBF24'); // Gold/Amber
 
       for (let i = 0; i < count; i++) {
         positions[i * 3] = (Math.random() - 0.5) * 30;
@@ -197,16 +225,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const w = canvas.width = window.innerWidth;
         const h = canvas.height = window.innerHeight;
         const grad = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, w/1.2);
-        grad.addColorStop(0, 'rgba(59,130,246,0.15)');
-        grad.addColorStop(0.5, 'rgba(0,229,255,0.05)');
-        grad.addColorStop(1, 'rgba(5,8,22,0)');
+        grad.addColorStop(0, 'rgba(249,115,22,0.15)');
+        grad.addColorStop(0.5, 'rgba(251,191,36,0.05)');
+        grad.addColorStop(1, 'rgba(17,17,17,0)');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
         // Draw random dots
         for (let i = 0; i < 200; i++) {
           ctx.beginPath();
           ctx.arc(Math.random() * w, Math.random() * h, Math.random() * 1.5, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(59,130,246,${Math.random() * 0.3})`;
+          ctx.fillStyle = `rgba(249,115,22,${Math.random() * 0.3})`;
           ctx.fill();
         }
       }
@@ -241,10 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Draw phone parts
     const parts = [
-      { name: 'Display', note: 'Crack detected • 78% integrity', color: '#3B82F6', x: 0, y: 0, w: 0.5, h: 0.7 },
-      { name: 'Battery', note: 'Health: 82% • Cycle count: 342', color: '#00E5FF', x: -0.2, y: 0.6, w: 0.3, h: 0.15 },
-      { name: 'Mainboard', note: 'All circuits functional', color: '#F97316', x: -0.25, y: 0.2, w: 0.25, h: 0.25 },
-      { name: 'Camera', note: 'Lens scratch • Focus OK', color: '#8B5CF6', x: 0.35, y: -0.3, w: 0.15, h: 0.15 },
+      { name: 'Display', note: 'Crack detected • 78% integrity', color: '#F97316', x: 0, y: 0, w: 0.5, h: 0.7 },
+      { name: 'Battery', note: 'Health: 82% • Cycle count: 342', color: '#FBBF24', x: -0.2, y: 0.6, w: 0.3, h: 0.15 },
+      { name: 'Mainboard', note: 'All circuits functional', color: '#111111', x: -0.25, y: 0.2, w: 0.25, h: 0.25 },
+      { name: 'Camera', note: 'Lens scratch • Focus OK', color: '#EA580C', x: 0.35, y: -0.3, w: 0.15, h: 0.15 },
     ];
 
     let activePart = -1;
@@ -301,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.restore();
 
       // HUD overlay
-      ctx.fillStyle = `rgba(0,229,255,${0.1 + p * 0.15})`;
+      ctx.fillStyle = `rgba(249,115,22,${0.1 + p * 0.15})`;
       ctx.font = "10px 'JetBrains Mono', monospace";
       ctx.fillStyle = 'rgba(255,255,255,0.2)';
       ctx.fillText(`EXPLODED VIEW // ${Math.round(p * 100)}%`, 16, 30);
@@ -366,20 +394,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // 7. TILT EFFECT ON CARDS
   // ============================================================
-  document.querySelectorAll('[data-tilt]').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(800px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateY(-4px)`;
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('[data-tilt]').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(800px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+      });
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+  }
+
+  // ============================================================
+  // 8. SERVICE CARD DETAIL ACCORDION
+  // ============================================================
+  document.querySelectorAll('[data-service-toggle]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't toggle if clicking a link inside
+      if (e.target.closest('a')) return;
+
+      const detail = card.querySelector('.service-detail');
+      if (!detail) return;
+
+      const isOpen = card.classList.contains('detail-open');
+
+      // Close all others
+      document.querySelectorAll('[data-service-toggle]').forEach(other => {
+        if (other !== card) {
+          other.classList.remove('detail-open');
+          const otherDetail = other.querySelector('.service-detail');
+          if (otherDetail) otherDetail.style.maxHeight = '0';
+        }
+      });
+
+      // Toggle current
+      card.classList.toggle('detail-open');
+      if (isOpen) {
+        detail.style.maxHeight = '0';
+      } else {
+        detail.style.maxHeight = detail.scrollHeight + 'px';
+      }
     });
   });
 
   // ============================================================
-  // 8. SCROLL REVEAL (GSAP)
+  // 9. SCROLL REVEAL (GSAP)
   // ============================================================
   function initScrollReveal() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
@@ -509,10 +571,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    // Why Choose items
+    document.querySelectorAll('.why-choose-item').forEach((item, i) => {
+      gsap.to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: i * 0.08,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item.closest('.why-choose-grid'),
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+    });
   }
 
   // ============================================================
-  // 9. COUNTER ANIMATION
+  // 10. COUNTER ANIMATION
   // ============================================================
   function initCounters() {
     const counters = document.querySelectorAll('.stat-num');
@@ -540,7 +618,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================================
-  // 10. SCAN LINE ANIMATION
+  // 11. SCAN LINE ANIMATION
   // ============================================================
   function initScanLine() {
     const scanLine = document.querySelector('.scan-line');
@@ -586,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScanLine();
 
   // ============================================================
-  // 11. FAQ ACCORDION
+  // 12. FAQ ACCORDION
   // ============================================================
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');
@@ -606,7 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // 12. LIGHTBOX
+  // 13. LIGHTBOX
   // ============================================================
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
@@ -638,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // 13. SMOOTH SCROLL (Lenis)
+  // 14. SMOOTH SCROLL (Lenis)
   // ============================================================
   if (typeof Lenis !== 'undefined') {
     const lenis = new Lenis({
@@ -666,12 +744,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================================
-  // 14. FOOTER YEAR
+  // 15. FOOTER YEAR
   // ============================================================
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // ============================================================
-  // 15. MOBILE NAV — close on resize to desktop
+  // 16. MOBILE NAV — close on resize to desktop
   // ============================================================
   window.addEventListener('resize', () => {
     if (window.innerWidth > 880) {
@@ -680,6 +758,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     }
   });
+
+
 
   console.log('🚀 OTO Mobiles — On Time On Way · System Online');
   console.log('📱 Built with ❤️ for Bhilai');

@@ -70,7 +70,7 @@
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <a href="#hero" class="nav-logo">OTO ON TIME ON WAY<span>.</span></a>
+    <a href="#hero" class="nav-logo"><span class="logo-o1">O</span><span class="logo-t">T</span><span class="logo-o2">O</span><span class="logo-rest">ON TIME ON WAY</span></a>
     <nav class="nav-links">
       <a href="#services" data-cursor="hover">Services</a>
       <a href="#shop" data-cursor="hover">Shop</a>
@@ -78,9 +78,14 @@
       <a href="#process" data-cursor="hover">Process</a>
       <a href="#contact" data-cursor="hover">Contact</a>
     </nav>
-    <a href="https://wa.me/919244077867" target="_blank" class="nav-cta" data-cursor="hover">
-      <i class="fa-brands fa-whatsapp"></i> Talk to Us
-    </a>
+    <div class="nav-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme" data-cursor="hover">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <a href="https://wa.me/919244077867" target="_blank" class="nav-cta" data-cursor="hover">
+        <i class="fa-brands fa-whatsapp"></i> Talk to Us
+      </a>
+    </div>
     <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span></button>
   </header>
 
@@ -139,7 +144,28 @@
         <span>SCROLL TO INITIATE DIAGNOSTIC</span>
         <div class="scroll-cue-line"><i></i></div>
       </div>
-    </section><!-- ============ SCROLL STORY / REPAIR SHOWCASE ============ -->
+    </section>
+
+    <!-- ============ DIAGNOSIS CTA (Moved from Services) ============ -->
+    <section class="diagnosis-banner" id="diagnosis">
+      <div class="diagnosis-inner">
+        <div class="diagnosis-text">
+          <span class="diagnosis-icon">🔍</span>
+          <h3>Not sure what's wrong?</h3>
+          <p>Send us a video on WhatsApp — we'll diagnose it for free. No appointment needed, no hidden charges.</p>
+        </div>
+        <div class="diagnosis-actions">
+          <a href="https://wa.me/919244077867" target="_blank" class="btn btn-primary magnetic" data-cursor="hover">
+            <i class="fa-brands fa-whatsapp"></i><span>Get a Free Diagnosis</span>
+          </a>
+          <a href="tel:9244077867" class="btn btn-ghost magnetic" data-cursor="hover" style="border-color:rgba(255,255,255,.2);color:#fff;">
+            <i class="fa-solid fa-phone"></i><span>Call Now</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCROLL STORY / REPAIR SHOWCASE ============ -->
     <section class="story-showcase" id="story">
       <div class="section-head" style="padding-top:6rem;">
         <span class="section-eyebrow">[ HOW WE WORK ]</span>
@@ -201,66 +227,271 @@
       </div>
 
       <div class="services-grid">
-        <article class="service-card" data-tilt>
+        <!-- 1. Screen Replacement -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-mobile-screen-button"></i>
           <h3>Screen Replacement</h3>
           <p>Original-grade displays, color-matched, calibrated on install.</p>
+          <span class="service-price">Starting from ₹799</span>
+          <div class="expand-hint"><span>View pricing</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>📱 Old 4G Models</h4>
+              <ul>
+                <li>Display Replacement from <strong>₹799</strong></li>
+                <li><strong>₹849 Package</strong> — Screen Guard FREE</li>
+                <li><strong>₹1000 Package</strong> — Screen Guard FREE + 3 Months Warranty</li>
+              </ul>
+              <span class="detail-price">Original Display from ₹1,800</span>
+              <p class="detail-note">Warranty excludes physical or accidental damage.</p>
+
+              <h4>📱 New Smartphone Models</h4>
+              <ul>
+                <li>Display Replacement from <strong>₹999</strong></li>
+                <li><strong>₹1200 Package</strong> — Screen Guard FREE + 1 Month Warranty</li>
+                <li><strong>₹1500 Package</strong> — Screen Guard FREE + 3 Months Warranty</li>
+              </ul>
+              <span class="detail-price">Original Display from ₹2,500</span>
+              <p class="detail-note">Warranty excludes physical or accidental damage.</p>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 2. Battery Replacement -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-battery-three-quarters"></i>
           <h3>Battery Replacement</h3>
           <p>Real capacity, real lifespan — no inflated mAh promises.</p>
+          <span class="service-price">Starting from ₹499</span>
+          <div class="expand-hint"><span>View pricing</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>🔋 Old Models</h4>
+              <ul>
+                <li>Battery Replacement from <strong>₹499 – ₹999</strong></li>
+                <li>Original Battery from <strong>₹800</strong></li>
+              </ul>
+              <span class="detail-warranty"><i class="fa-solid fa-shield-halved"></i> 6 Months – 1 Year Warranty</span>
+
+              <h4>🔋 New Models</h4>
+              <ul>
+                <li>Battery Replacement from <strong>₹1,000</strong></li>
+                <li>Original Battery from <strong>₹1,500</strong></li>
+              </ul>
+              <span class="detail-warranty"><i class="fa-solid fa-shield-halved"></i> 3 Months – 1 Year Warranty</span>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 3. Charging Port Repair -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-plug-circle-bolt"></i>
           <h3>Charging Port Repair</h3>
           <p>Micro-soldering precision for ports that hold a charge again.</p>
+          <span class="service-price">Starting from ₹249</span>
+          <div class="expand-hint"><span>View pricing</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>⚡ Old Models</h4>
+              <ul>
+                <li>Normal Charging Panel from <strong>₹249</strong></li>
+                <li>Original Charging Port <strong>₹499</strong></li>
+              </ul>
+
+              <h4>⚡ New Models</h4>
+              <ul>
+                <li>Charging Port Repair <strong>₹299 – ₹599</strong></li>
+                <li>Original Charging Port from <strong>₹599</strong></li>
+              </ul>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 4. Camera Repair -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-camera"></i>
           <h3>Camera Repair</h3>
           <p>Lens, sensor, and module fixes that bring focus back.</p>
+          <span class="service-price">Price depends on model</span>
+          <div class="expand-hint"><span>View details</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>📷 We Repair</h4>
+              <ul>
+                <li>Blurry Camera</li>
+                <li>Black Spots</li>
+                <li>Camera Not Opening</li>
+                <li>Focus Issues</li>
+                <li>Zoom Problems</li>
+                <li>Dust Removal</li>
+                <li>Camera Replacement</li>
+              </ul>
+              <p class="detail-note">💰 Price depends on phone model and camera condition. No Warranty / No Guarantee.</p>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 5. Water Damage Repair -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-droplet-slash"></i>
           <h3>Water Damage Repair</h3>
           <p>Corrosion treatment and board-level revival, fast.</p>
+          <span class="service-price">10%–80% recovery</span>
+          <div class="expand-hint"><span>View details</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>💧 Water Damage Recovery</h4>
+              <ul>
+                <li>We repair water-damaged smartphones</li>
+                <li>✅ 10% – 80% water damage recovery possible</li>
+                <li>Warranty depends on phone's condition after inspection</li>
+              </ul>
+              <p class="detail-note">Recovery rate varies by severity and duration of water exposure.</p>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 6. Motherboard Repair -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-microchip"></i>
           <h3>Motherboard Repair</h3>
           <p>Component-level diagnostics under microscope, not guesswork.</p>
+          <span class="service-price">1–6 Months Warranty</span>
+          <div class="expand-hint"><span>View details</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>🔧 Complete Board Repair</h4>
+              <ul>
+                <li>No Power / Dead Phone</li>
+                <li>IC Replacement (Charging, Display, Audio)</li>
+                <li>Network Issues</li>
+                <li>CPU Reballing (where applicable)</li>
+              </ul>
+              <span class="detail-warranty"><i class="fa-solid fa-shield-halved"></i> 1 to 6 Months Warranty (depending on repair)</span>
+              <p class="detail-note">💰 Price depends on motherboard condition.</p>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 7. Speaker & Audio Repair -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-volume-high"></i>
-          <h3>Speaker Repair</h3>
+          <h3>Speaker & Audio Repair</h3>
           <p>Clean, full sound restored — no rattle, no distortion.</p>
+          <span class="service-price">All audio issues fixed</span>
+          <div class="expand-hint"><span>View details</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>🔊 We Fix</h4>
+              <ul>
+                <li>Low Sound / No Sound</li>
+                <li>Distorted Audio / Voice Breaking</li>
+                <li>Water-Cleaning of Speaker</li>
+                <li>Dust Cleaning</li>
+                <li>Speaker Replacement</li>
+                <li>Earpiece Repair</li>
+                <li>Microphone Repair</li>
+              </ul>
+            </div>
+          </div>
         </article>
-        <article class="service-card" data-tilt>
-          <i class="fa-solid fa-microphone"></i>
-          <h3>Mic Repair</h3>
-          <p>Crisp calls and clean recordings, every time.</p>
-        </article>
-        <article class="service-card" data-tilt>
+
+        <!-- 8. Software Solutions -->
+        <article class="service-card" data-tilt data-service-toggle>
           <i class="fa-solid fa-laptop-code"></i>
           <h3>Software Solutions</h3>
           <p>Flashing, unlocks, OS issues — sorted by certified technicians.</p>
+          <span class="service-price">99% data recovery rate</span>
+          <div class="expand-hint"><span>View details</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>💻 Android & iPhone Support</h4>
+              <ul>
+                <li>Phone Unlock / FRP Bypass</li>
+                <li>Software Flashing / System Updates</li>
+                <li>Apple ID / iTunes / iCloud Issues</li>
+                <li>Boot Loop Fix / Dead Boot Recovery</li>
+                <li>Data Recovery (Up to <strong>99% Success Rate</strong>)</li>
+                <li>Password / Pattern Unlock</li>
+                <li>Virus Removal</li>
+              </ul>
+              <p class="detail-note">✔ All types of software problems solved.</p>
+            </div>
+          </div>
         </article>
+
+        <!-- 9. Accessories Repair -->
+        <article class="service-card" data-tilt data-service-toggle>
+          <i class="fa-solid fa-headphones-simple"></i>
+          <h3>Accessories Repair</h3>
+          <p>Earbuds, neckbands, speakers — we repair all brands.</p>
+          <span class="service-price">All major brands</span>
+          <div class="expand-hint"><span>View details</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>🎧 We Repair</h4>
+              <ul>
+                <li>Earbuds / TWS Earphones</li>
+                <li>Neckbands / Wired Earphones</li>
+                <li>Headphones</li>
+                <li>Bluetooth Speakers</li>
+                <li>Mobile Accessories</li>
+              </ul>
+              <h4>Brands</h4>
+              <ul>
+                <li>OnePlus, Realme, boAt, Aroma, Zebronics</li>
+                <li>Noise, Boult, Portronics & more</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Accessories for Sale -->
+        <article class="service-card" data-tilt data-service-toggle>
+          <i class="fa-solid fa-bag-shopping"></i>
+          <h3>Accessories for Sale</h3>
+          <p>Cases, chargers, cables, earbuds — curated, not just stocked.</p>
+          <span class="service-price">Starting from ₹199</span>
+          <div class="expand-hint"><span>View products</span><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="service-detail">
+            <div class="service-detail-inner">
+              <h4>🎧 Audio</h4>
+              <ul>
+                <li>Earphones from <strong>₹199</strong></li>
+                <li>Neckbands from <strong>₹199</strong></li>
+                <li>Earbuds / TWS from <strong>₹399</strong></li>
+                <li>Bluetooth Speakers from <strong>₹299</strong></li>
+              </ul>
+              <h4>⌚ Wearables</h4>
+              <ul>
+                <li>Smart Watches from <strong>₹599</strong></li>
+              </ul>
+              <h4>📱 Mobile Accessories</h4>
+              <ul>
+                <li>Mobile Covers / Premium & Designer Covers</li>
+                <li>Tempered Glass / Privacy Glass / Camera Protectors</li>
+                <li>Screen Guards / Phone Laminations</li>
+                <li>Fast Chargers / Data Cables / OTG Adapters</li>
+                <li>Car Chargers / Mobile Holders / Power Banks</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Data Recovery -->
         <article class="service-card" data-tilt>
           <i class="fa-solid fa-database"></i>
           <h3>Data Recovery</h3>
           <p>Photos, contacts, files — recovered with care, kept private.</p>
+          <span class="service-price">Up to 99% success rate</span>
         </article>
-        <article class="service-card" data-tilt>
-          <i class="fa-solid fa-headphones-simple"></i>
-          <h3>Accessories</h3>
-          <p>Cases, chargers, cables — curated, not just stocked.</p>
-        </article>
+
+        <!-- 12. CTA Card -->
         <article class="service-card service-card-cta" data-tilt>
-          <h3>Not sure what's wrong?</h3>
-          <p>Send us a video on WhatsApp — we'll diagnose it for free.</p>
-          <a href="https://wa.me/919244077867" target="_blank" class="link-arrow" data-cursor="hover">Get a free
-            diagnosis <i class="fa-solid fa-arrow-up-right"></i></a>
+          <h3>Need a custom repair?</h3>
+          <p>Describe your problem — we'll get back with a quote within minutes.</p>
+          <a href="https://wa.me/919244077867" target="_blank" class="link-arrow" data-cursor="hover">Chat on WhatsApp
+            <i class="fa-solid fa-arrow-up-right"></i></a>
         </article>
       </div>
     </section>
@@ -632,6 +863,84 @@
       </div>
     </section>
 
+    <!-- ============ ACCESSORIES FOR SALE ============ -->
+    <section class="accessories" id="accessories">
+      <div class="section-head">
+        <span class="section-eyebrow">[ SHOP ACCESSORIES ]</span>
+        <h2>Accessories<br>for sale.</h2>
+        <p class="section-sub">Quality accessories at unbeatable prices — available at our shop.</p>
+      </div>
+
+      <div class="accessories-grid">
+        <!-- Earphones -->
+        <div class="accessory-card" data-reveal>
+          <div class="accessory-icon"><i class="fa-solid fa-headphones"></i></div>
+          <h3>Earphones</h3>
+          <span class="accessory-price">Starting from <strong>₹199</strong></span>
+        </div>
+
+        <!-- Neckbands -->
+        <div class="accessory-card" data-reveal>
+          <div class="accessory-icon"><i class="fa-solid fa-music"></i></div>
+          <h3>Neckbands</h3>
+          <span class="accessory-price">Starting from <strong>₹199</strong></span>
+        </div>
+
+        <!-- Earbuds / TWS -->
+        <div class="accessory-card" data-reveal>
+          <div class="accessory-icon"><i class="fa-solid fa-headphones-simple"></i></div>
+          <h3>Earbuds / TWS</h3>
+          <span class="accessory-price">Starting from <strong>₹399</strong></span>
+        </div>
+
+        <!-- Smart Watches -->
+        <div class="accessory-card" data-reveal>
+          <div class="accessory-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Smart Watches</h3>
+          <span class="accessory-price">Starting from <strong>₹599</strong></span>
+        </div>
+
+        <!-- Bluetooth Speakers -->
+        <div class="accessory-card" data-reveal>
+          <div class="accessory-icon"><i class="fa-solid fa-volume-high"></i></div>
+          <h3>Bluetooth Speakers</h3>
+          <span class="accessory-price">Starting from <strong>₹299</strong></span>
+        </div>
+      </div>
+
+      <!-- Mobile Accessories Mega Card -->
+      <div class="accessories-mega" data-reveal>
+        <div class="mega-header">
+          <div class="mega-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <div>
+            <h3>📱 Mobile Accessories</h3>
+            <p>Everything your phone needs — all under one roof.</p>
+          </div>
+        </div>
+        <div class="mega-items">
+          <span>Mobile Covers</span>
+          <span>Premium Covers</span>
+          <span>Designer Covers</span>
+          <span>Tempered Glass</span>
+          <span>Privacy Glass</span>
+          <span>Camera Lens Protectors</span>
+          <span>Screen Guards</span>
+          <span>Phone Laminations</span>
+          <span>Fast Chargers</span>
+          <span>Data Cables</span>
+          <span>OTG Adapters</span>
+          <span>Car Chargers</span>
+          <span>Mobile Holders</span>
+          <span>Power Banks</span>
+          <span>Printer Covers</span>
+          <span>All Mobile Accessories</span>
+        </div>
+        <a href="https://wa.me/919244077867?text=Hi%2C%20I'm%20interested%20in%20accessories%20from%20OTO%20Mobiles" target="_blank" class="btn btn-primary magnetic" data-cursor="hover" style="margin-top:1.5rem;">
+          <i class="fa-brands fa-whatsapp"></i><span>Order on WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
     <!-- ============ BRANDS MARQUEE ============ -->
     <section class="brands">
       <div class="marquee">
@@ -671,6 +980,64 @@
     </section>
 
     <!-- ============ WHY CHOOSE US ============ -->
+    <section class="why-choose" id="whyChoose">
+      <div class="section-head">
+        <span class="section-eyebrow" style="color:var(--primary);">[ WHY OTO ]</span>
+        <h2>Why Choose OTO Mobiles?</h2>
+      </div>
+      <div class="why-choose-grid">
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Expert Mobile Technicians</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-certificate"></i>
+          <span>Genuine & High-Quality Spare Parts</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Affordable Pricing</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-bolt"></i>
+          <span>Fast Same-Day Repairs</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Warranty on Selected Repairs</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>Buy & Sell Second-Hand Phones</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-database"></i>
+          <span>Data Recovery Experts</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-headset"></i>
+          <span>Friendly Customer Support</span>
+        </div>
+        <div class="why-choose-item" data-reveal>
+          <i class="fa-solid fa-mobile-retro"></i>
+          <span>All Smartphone Brands Supported</span>
+        </div>
+      </div>
+
+      <!-- Warranty Note -->
+      <div class="warranty-note">
+        <div class="warranty-note-inner">
+          <h4><i class="fa-solid fa-circle-info"></i> Warranty Note</h4>
+          <ul>
+            <li>Warranty is available only on eligible repairs and spare parts.</li>
+            <li>Physical damage, water damage after repair, accidental damage, and customer mishandling are <strong>not covered under warranty</strong>.</li>
+            <li>Final repair cost and warranty period depend on the phone model and inspection by our technician.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
     <section class="stats">
       <div class="stats-grid">
         <div class="stat-card" data-reveal>
